@@ -1,8 +1,16 @@
-# Comparison widget core
-Comparison widget React class to be used in [JS pluggable widget](https://github.com/transferwise/comparison-widget/), Angular component etc.
+# Comparison components
+
+<img src="http://www.linnovate.net/sites/default/files/reactjs.png" width="24" />
+
+React components for comparison used in [JS pluggable widget](https://github.com/transferwise/comparison-widget/), Angular component etc.
+
+## Components
+
+### `<ComparisonTable />`
+<img src="https://i.imgur.com/bNtSMu6.png" width="800" />
 
 ## Development
-Comparison widget is built in React, using Webpack and npm scripts.
+Comparison components are built in React, with the development and build process using Webpack and npm scripts.
 
 ### Tasks
 To develop, run `npm install` or `yarn` and use the following tasks:
