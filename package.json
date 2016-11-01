@@ -1,8 +1,8 @@
 {
-  "name": "comparison-widget-core",
+  "name": "comparison-components",
   "version": "0.1.0",
-  "description": "Comparison widget React class to be used in JS pluggable widget, Angular component etc.",
-  "main": "dist/comparison-widget-core.js",
+  "description": "Comparison components to be used in JS pluggable widget, Angular component etc.",
+  "main": "dist/comparison-components.js",
   "files": [
     "dist"
   ],

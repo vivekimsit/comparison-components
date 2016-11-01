@@ -1,14 +1,14 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const distFileName = 'comparison-widget-core';
+const distFileName = 'comparison-components';
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: `${distFileName}.js`,
-    library: 'comparison-widget-core',
+    library: 'comparison-components',
     libraryTarget: 'commonjs2',
   },
   module: {

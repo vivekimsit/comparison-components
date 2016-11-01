@@ -1,7 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const distFileName = 'comparison-widget-core';
+const distFileName = 'comparison-components';
 
 module.exports = {
   entry: './demo/index.js',

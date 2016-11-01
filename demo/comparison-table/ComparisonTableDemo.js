@@ -1,7 +1,7 @@
-import React, { Component }  from 'react';
+import React, { Component } from 'react';
 
 import DemoAmountInput from './DemoAmountInput';
-import ComparisonWidgetCore from '../src';
+import { ComparisonTable } from '../../src';
 
 export default class Demo extends Component {
   constructor(props) {
@@ -22,7 +22,10 @@ export default class Demo extends Component {
   render() {
     return (
       <div>
-        <h2 className="h3 page-header m-b-3">Test amounts</h2>
+        <h2 className="page-header m-t-3">
+          <code>&lt;ComparisonTable /&gt;</code>
+        </h2>
+        <h3 className="m-b-3">Test amounts</h3>
         <DemoAmountInput
           amount={this.state.amount}
           source={this.state.source}
@@ -31,9 +34,9 @@ export default class Demo extends Component {
 
         <hr />
 
-        <h2 className="h3 page-header m-b-3">Result</h2>
+        <h3 className="m-b-3">Result</h3>
 
-        <ComparisonWidgetCore
+        <ComparisonTable
           source={'GBP'}
           target={'EUR'}
           amount={this.state.amount}

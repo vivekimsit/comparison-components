@@ -5,7 +5,7 @@ import Loader from '../bootstrap/Loader';
 import { comparisonsFor } from './ComparisonApi';
 import Provider from './Provider';
 import Disclaimer from './Disclaimer';
-import './Comparison.less';
+import './ComparisonTable.less';
 
 export default class Comparison extends Component {
   state = {
@@ -117,7 +117,7 @@ export default class Comparison extends Component {
     const providers = this.state.showMore ? this.state.providers : this.state.providers.slice(0, 3);
     const trimmed = providers.length < this.state.providers.length;
     return (
-      <div className="tw-comparison-widget">
+      <div className="tw-comparison-table">
         {this.renderTable()}
 
         <div className="col-xl-12 text-xs-center m-b-3">

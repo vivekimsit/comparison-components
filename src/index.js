@@ -1,3 +1,3 @@
-import ComparisonWidgetCore from './comparison/Comparison';
+import ComparisonTable from './comparison-table';
 
-export default ComparisonWidgetCore;
+export { ComparisonTable };
