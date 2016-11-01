@@ -1,6 +1,6 @@
 {
   "name": "comparison-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Comparison components to be used in JS pluggable widget, Angular component etc.",
   "main": "dist/comparison-components.js",
   "files": [
