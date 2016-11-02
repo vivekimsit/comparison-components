@@ -7,7 +7,7 @@ import Provider from './Provider';
 import Disclaimer from './Disclaimer';
 import './ComparisonTable.less';
 
-export default class Comparison extends Component {
+export default class ComparisonTable extends Component {
   state = {
     showMore: false,
     providers: [],
