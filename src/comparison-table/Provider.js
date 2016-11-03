@@ -16,7 +16,7 @@ export default class Provider extends Component {
       <span>
         Charges they tell you about: <Amount currency={this.props.source} value={this.props.fees}/>
         <br/>
-        <span className="text-danger">Hidden charge in rate mark-up: <Amount currency={this.props.source} value={this.props.hiddenFees}/></span><br/>
+        <span className="text-danger">Amount you pay due to a bad rate: <Amount currency={this.props.source} value={this.props.hiddenFees}/></span><br/>
       </span>;
   }
 
@@ -44,8 +44,8 @@ export default class Provider extends Component {
             </Popover>
           </div>
           <div>
-            <small className="text-primary">Upfront</small>
-            {this.props.hiddenFees > 0 ? <small className="text-danger m-l-2">Hidden</small> : null}
+            <small className="text-primary">Fees</small>
+            {this.props.hiddenFees > 0 ? <small className="text-danger m-l-2">Bad rate loss</small> : null}
           </div>
         </td>
 
