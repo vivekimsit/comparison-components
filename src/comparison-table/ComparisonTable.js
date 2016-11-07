@@ -77,7 +77,7 @@ export default class ComparisonTable extends Component {
 
   renderLoader() {
     return (
-      <div className="text-xs-center m-t-3 p-t-3">
+      <div className="text-xs-center m-t-5 m-b-3">
         <Loader/>
       </div>
     );
@@ -94,7 +94,7 @@ export default class ComparisonTable extends Component {
 
     const providers = this.state.showMore ? this.state.providers : this.state.providers.slice(0, 3);
     return (
-      <div className="table-responsive col-xs-12 col-sm-12 col-xl-12 p-x-0" style={{position: 'static'}}>
+      <div className="table-responsive" style={{position: 'static'}}>
         <table className="table">
           <tbody>
             <tr>
@@ -120,7 +120,7 @@ export default class ComparisonTable extends Component {
       <div className="tw-comparison-table">
         {this.renderTable()}
 
-        <div className="col-xl-12 text-xs-center m-b-3">
+        <div className="text-xs-center m-b-3">
           {!this.state.showMore && trimmed ?
           <a href="" onClick={this.showMore}>
               Show more providers <span className="icon icon-down"></span>
@@ -132,9 +132,10 @@ export default class ComparisonTable extends Component {
           </a> : null}
         </div>
 
-        <div className="col-xs-12 col-sm-12 col-xl-12">
-          <Disclaimer source={this.props.source} target={this.props.target}/>
-        </div>
+        <Disclaimer
+          source={this.props.source}
+          target={this.props.target}
+        />
       </div>
     );
   }

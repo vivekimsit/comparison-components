@@ -34,7 +34,11 @@ export default class Disclaimer extends Component {
 
   renderData() {
     if (this.state.loading) {
-      return <Loader/>;
+      return (
+        <div className="text-xs-center m-t-3">
+          <Loader/>
+        </div>
+      );
     }
 
     if (this.state.providers.length > 0) {
