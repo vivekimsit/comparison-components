@@ -28,7 +28,7 @@ export default class Provider extends Component {
     return (
       <tr>
         <td className="provider-name">
-          <div className="h3 font-weight-normal m-t-3">{this.props.name}</div>
+          <div className="h3 font-weight-normal m-t-3"><img width="180px" src={this.props.logo} alt={this.props.name}/></div>
         </td>
 
         <td className="hidden-xs hidden-sm">

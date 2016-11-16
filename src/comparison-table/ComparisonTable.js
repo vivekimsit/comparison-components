@@ -51,6 +51,7 @@ export default class ComparisonTable extends Component {
         this.setState({providers: providers.map(data => {
           return {
             id: data.id,
+            logo: data.logo,
             name: data.name,
             rate: data.rate,
             fees: data.fees,
@@ -105,7 +106,7 @@ export default class ComparisonTable extends Component {
           </tbody>
           <tbody>
             {providers.map(p => {
-              return <Provider key={p.id} name={p.name} fees={p.fees} rate={p.rate} hiddenFees={p.hiddenFees} maxFee={p.maxFee} source={this.props.source} target={this.props.target} amount={p.amount} collectedAt={p.collectedAt}/>
+              return <Provider key={p.id} name={p.name} logo={p.logo} fees={p.fees} rate={p.rate} hiddenFees={p.hiddenFees} maxFee={p.maxFee} source={this.props.source} target={this.props.target} amount={p.amount} collectedAt={p.collectedAt}/>
             })}
           </tbody>
         </table>
