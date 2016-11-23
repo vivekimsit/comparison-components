@@ -100,7 +100,7 @@ export default class ComparisonTable extends Component {
           <tbody>
             <tr>
               <th>Provider</th>
-              <th className="text-xs-right hidden-xs text-md-left">Total cost for sending {this.props.amount} {this.props.source} to {this.props.target}</th>
+              <th className="text-xs-right hidden-xs text-md-left text-xs-nowrap">Total cost for sending {this.props.amount} {this.props.source} to {this.props.target}</th>
               <th className="text-xs-right">Amount received</th>
             </tr>
           </tbody>

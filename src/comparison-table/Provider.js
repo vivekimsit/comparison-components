@@ -27,12 +27,12 @@ export default class Provider extends Component {
     const fetched = <span>Fetched on: <Datetime date={this.props.collectedAt}/></span>
     return (
       <tr>
-        <td className="provider-name">
-          <div className="h3 font-weight-normal m-t-3"><img width="180px" src={this.props.logo} alt={this.props.name}/></div>
+        <td className="provider-name text-xs-nowrap">
+          <div className="h3 font-weight-normal m-t-3"><img className="provider-logo" src={this.props.logo} alt={this.props.name}/></div>
         </td>
 
         <td className="hidden-xs hidden-sm">
-          <div className="m-t-3">
+          <div className="m-t-3 text-xs-nowrap">
             <Popover trigger="hover" title={title} content={fetched}>
               <div className="progress progress-lg help-cursor" style={{position: 'relative', width: barWidth + '%', verticalAlign: 'middle', minWidth: '35px'}}>
                 {parseFloat(this.props.fees) > 0 ?
@@ -56,7 +56,7 @@ export default class Provider extends Component {
             </div>
 
           <br/>
-          <Amount className="m-b-0 h2 font-weight-normal no-text-wrap help-cursor" style={{display: 'inline-block'}} currency={this.props.source} value={this.props.fees + this.props.hiddenFees}/>
+          <Amount className="m-b-0 h2 font-weight-normal text-xs-nowrap help-cursor" style={{display: 'inline-block'}} currency={this.props.source} value={this.props.fees + this.props.hiddenFees}/>
 
           <br/>
           <div style={{display: 'inline-block'}}>
@@ -72,11 +72,11 @@ export default class Provider extends Component {
 
         <td className="text-xs-right amount-received">
           <div className="m-t-3">
-            <Amount className="m-b-0 h2 font-weight-normal no-text-wrap" currency={this.props.target} value={this.props.amount}/>
-            <small>
+            <Amount className="m-b-0 h2 font-weight-normal text-xs-nowrap" currency={this.props.target} value={this.props.amount}/>
+            <small class="text-xs-nowrap">
               {this.hasNoHiddenFees() ?
-                <span>Real rate <span className="text-default">{this.props.rate}</span></span> :
-                <span>{this.props.name} rate <span className="text-danger">{this.props.rate}</span></span>}
+                <div>Real rate <span className="text-default">{this.props.rate}</span></div> :
+                <div>{this.props.name} rate <span className="text-danger">{this.props.rate}</span></div>}
             </small>
           </div>
         </td>
