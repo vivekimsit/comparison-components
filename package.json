@@ -8,7 +8,7 @@
   ],
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.dev.js --content-base demo/ --progress --inline --hot",
+    "start": "webpack-dev-server --config webpack.config.dev.js --content-base demo/ --port 4040 --progress --inline --hot",
     "build": "webpack -p",
     "lint": "node_modules/.bin/eslint ./",
     "test": "echo \"Error: no test specified\" && exit 1"

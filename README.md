@@ -15,7 +15,7 @@ Comparison components are built in React, with the development and build process
 ### Tasks
 To develop, run `npm install` or `yarn` and use the following tasks:
 ```
-npm start        - runs a hot reloading server on port 8080 with demo app using the React component
+npm start        - runs a hot reloading server on port 4040 with demo app using the React component
 npm run lint     - lints the files using ESLint (currently not required)
 npm run build    - builds Webpack bundle and CSS using -p flag (with minification and uglification)
 ```
