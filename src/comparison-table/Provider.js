@@ -73,7 +73,7 @@ export default class Provider extends Component {
         <td className="text-xs-right amount-received">
           <div className="m-t-3">
             <Amount className="m-b-0 h2 font-weight-normal text-xs-nowrap" currency={this.props.target} value={this.props.amount}/>
-            <small>
+            <small className="text-xs-nowrap">
               {this.hasNoHiddenFees() ?
                 <div>Real rate <span className="text-default">{this.props.rate}</span></div> :
                 <div>{this.props.name} rate <span className="text-danger">{this.props.rate}</span></div>}
