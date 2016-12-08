@@ -1,0 +1,2 @@
+// makes fetch global and allows to mock responses
+global.fetch = require('jest-fetch-mock');

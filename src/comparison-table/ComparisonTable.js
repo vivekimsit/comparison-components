@@ -38,14 +38,19 @@ export default class ComparisonTable extends Component {
     return Math.max.apply(null, providers.map(p => p.fees + p.hiddenFees));
   }
 
+  filterProviders = (providers, selected) => {
+    if (!selected) {
+      return providers;
+    }
+
+    return providers.filter(p => selected.some(f => p.alias.toLowerCase().includes(f.toLowerCase())));
+  }
+
   loadProviders(amount) {
     comparisonsFor(this.props.source, this.props.target, amount)
       .then(response => response.json())
       .then(json => {
-        const providers = this.props.filter ?
-          json.providers.filter(p => p.name.includes(this.props.filter) || p.name === 'TransferWise') :
-          json.providers;
-
+        const providers = this.filterProviders(json.providers, this.props.providers);
         const maxFee = this.maxFee(providers, amount);
 
         this.setState({providers: providers.map(data => {

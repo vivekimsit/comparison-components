@@ -9,6 +9,11 @@ module.exports = {
     path: path.join(__dirname, 'demo'),
     filename: `${distFileName}.js`,
   },
+  externals: {
+    'react/addons': true,
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
   module: {
     loaders: [
       {
