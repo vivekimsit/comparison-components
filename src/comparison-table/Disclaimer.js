@@ -88,7 +88,7 @@ export default class Disclaimer extends Component {
       <div>
         {this.state.providers.length > 0 ?
           <div className="small"><a href="" onClick={this.clear}>Close</a></div> :
-          <div className="small">How we collect this data? <a href="" onClick={this.loadProviders}>Learn more</a></div>}
+          <div className="small">How do we collect this data? <a href="" onClick={this.loadProviders}>Learn more</a></div>}
         {this.renderData()}
       </div>
     );

@@ -100,7 +100,7 @@ export default class ComparisonTable extends Component {
           <tbody>
             <tr>
               <th>Provider</th>
-              <th className="text-xs-right hidden-xs text-md-left text-xs-nowrap">Total cost for sending {this.props.amount} {this.props.source} to {this.props.target}</th>
+              <th className="text-xs-right hidden-xs text-md-left text-xs-nowrap">Total cost of sending {this.props.amount} {this.props.source} to {this.props.target}</th>
               <th className="text-xs-right">Amount received</th>
             </tr>
           </tbody>
@@ -129,7 +129,7 @@ export default class ComparisonTable extends Component {
 
           {this.state.showMore ?
           <a href="" onClick={this.showLess}>
-              Show less providers <span className="icon icon-up"></span>
+              Show fewer providers <span className="icon icon-up"></span>
           </a> : null}
         </div>
 
