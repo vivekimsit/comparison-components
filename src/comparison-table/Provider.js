@@ -10,59 +10,39 @@ export default class Provider extends Component {
   }
 
   render() {
-    const barWidth = (((this.props.hiddenFees + this.props.fees) / this.props.maxFee) * 100) * 0.5;
-    const feeBarWidth = (this.props.fees / (this.props.hiddenFees + this.props.fees) * 100);
     return (
       <tr>
-        <td className="provider-name text-xs-nowrap">
-          <div className="h3 font-weight-normal m-t-3"><img className="provider-logo" src={this.props.logo} alt={this.props.name}/></div>
+        <td className="text-xs-nowrap">
+          <img className="provider-logo" src={this.props.logo} alt={this.props.name}/>
         </td>
 
-        <td className="hidden-xs hidden-sm">
-          <div className="m-t-3 text-xs-nowrap">
-            <div className="progress progress-lg" style={{position: 'relative', width: barWidth + '%', verticalAlign: 'middle', minWidth: '35px'}}>
-              {parseFloat(this.props.fees) > 0 ?
-                <div className="progress-bar" style={{width: feeBarWidth + '%'}}>
-                </div> : null}
-            </div>
+        <td className="hidden-md hidden-lg hidden-xl text-xs-right amount-received text-primary">
+          {this.props.highestAmount == this.props.amount ?
+            <Amount className="text-xs-nowrap" currency={this.props.target} value={this.props.amount}/> :
+            <Amount className="text-xs-nowrap" currency={this.props.target} value={this.props.amount}/>}
+         </td>
 
-            <Amount className="h2 font-weight-normal text-no-wrap m-l-2" style={{verticalAlign: 'middle', margin: 0}} currency={this.props.source} value={this.props.fees + this.props.hiddenFees}/>
-          </div>
-          <div>
-            <small className="text-primary">Fee</small>
-            {this.props.hiddenFees > 0 ? <small className="text-danger m-l-2">Rate markup</small> : null}
-          </div>
+         <td className="hidden-md hidden-lg hidden-xl text-xs-right">
+            {this.hasNoHiddenFees() ?
+              <Amount className="text-success" value={this.props.rate} precision={4}></Amount> :
+              <Amount className="text-danger" value={this.props.rate} precision={4}></Amount>}
         </td>
 
-        <td className="hidden-xs hidden-md hidden-lg hidden-xl text-xs-right">
-          <div className="progress" style={{width: barWidth + '%'}}>
-            <div className="progress-bar" style={{width: feeBarWidth + '%'}}></div>
-          </div>
-
-          <br/>
-          <Amount className="m-b-0 h2 font-weight-normal text-xs-nowrap" style={{display: 'inline-block'}} currency={this.props.source} value={this.props.fees + this.props.hiddenFees}/>
-
-          <br/>
-          <div style={{display: 'inline-block'}}>
-            <small>
-              {this.hasNoHiddenFees() ?
-                'Fair and honest fee' :
-                <span>Hidden in rate <Amount currency={this.props.source} value={this.props.hiddenFees}/></span>
-              }
-            </small>
-          </div>
+        <td className="text-xs-right">
+          <Amount className="text-no-wrap text-primary" currency={this.props.source} value={this.props.fees + this.props.hiddenFees}/>
         </td>
 
-        <td className="text-xs-right amount-received">
-          <div className="m-t-3">
-            <Amount className="m-b-0 h2 font-weight-normal text-xs-nowrap" currency={this.props.target} value={this.props.amount}/>
-            <small className="text-xs-nowrap">
-              {this.hasNoHiddenFees() ?
-                <div>Real rate <span className="text-default">{this.props.rate}</span></div> :
-                <div>{this.props.name} rate <span className="text-danger">{this.props.rate}</span></div>}
-            </small>
-          </div>
+        <td className="hidden-xs hidden-sm text-xs-right">
+            {this.hasNoHiddenFees() ?
+              <Amount className="text-success" value={this.props.rate} precision={4}></Amount> :
+              <Amount className="text-danger" value={this.props.rate} precision={4}></Amount>}
         </td>
+
+        <td className="hidden-xs hidden-sm text-xs-right">
+          {this.props.highestAmount == this.props.amount ?
+            <Amount className="highest-amount text-primary text-xs-nowrap amount-received" currency={this.props.target} value={this.props.amount}/> :
+            <Amount className="text-primary text-xs-nowrap amount-received" currency={this.props.target} value={this.props.amount}/>}
+         </td>
       </tr>
     );
   }

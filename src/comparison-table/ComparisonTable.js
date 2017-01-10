@@ -100,18 +100,21 @@ export default class ComparisonTable extends Component {
 
     const providers = this.state.showMore ? this.state.providers : this.state.providers.slice(0, 3);
     return (
-      <div className="table-responsive" style={{position: 'static'}}>
-        <table className="table">
-          <tbody>
-            <tr>
-              <th>Provider</th>
-              <th className="text-xs-right hidden-xs text-md-left text-xs-nowrap">Total cost of sending {this.props.amount} {this.props.source} to {this.props.target}</th>
-              <th className="text-xs-right">Amount received</th>
+      <div className="table-responsive">
+        <table className="table table-bordered">
+          <thead>
+            <tr className="bg-primary text-inverse">
+              <th className="font-weight-normal">Provider</th>
+              <th className="hidden-md hidden-lg hidden-xl text-xs-right">Amount received</th>
+              <th className="hidden-md hidden-lg hidden-xl text-xs-right">Exchange rate</th>
+              <th className="text-xs-right text-xs-nowrap">Service fee</th>
+              <th className="hidden-xs hidden-sm text-xs-right hidden-xs">Exchange rate</th>
+              <th className="hidden-xs hidden-sm text-xs-right">Amount received</th>
             </tr>
-          </tbody>
+          </thead>
           <tbody>
             {providers.map(p => {
-              return <Provider key={p.id} name={p.name} logo={p.logo} fees={p.fees} rate={p.rate} hiddenFees={p.hiddenFees} maxFee={p.maxFee} source={this.props.source} target={this.props.target} amount={p.amount} collectedAt={p.collectedAt}/>
+              return <Provider key={p.id} name={p.name} logo={p.logo} fees={p.fees} rate={p.rate} hiddenFees={p.hiddenFees} maxFee={p.maxFee} source={this.props.source} target={this.props.target} amount={p.amount} highestAmount={providers[0].amount} collectedAt={p.collectedAt}/>
             })}
           </tbody>
         </table>

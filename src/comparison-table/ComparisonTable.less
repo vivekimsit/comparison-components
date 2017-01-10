@@ -1,61 +1,40 @@
-.tw-comparison-table .font-weight-normal {
-  font-weight: normal;
-}
+@import "~bootstrap/less/variables";
 
-.tw-comparison-table .hidden-text {
-  position: absolute;
-  right: 0;
-}
-
-.tw-comparison-table td,
-.tw-comparison-table th {
-  border: 0 !important;
-}
-
-.tw-comparison-table .progress {
-  margin: 0;
-}
-
-.tw-comparison-table th,
-.tw-comparison-table table {
-  border-bottom: 1px solid #e2e6e8 !important;
-  background-color: transparent !important;
-}
-
-.tw-comparison-table .progress {
-  display: inline-block;
-  background-color: #f53636 !important;
-}
-
-.tw-comparison-table .progress-bar {
-  background-color: #2F4366 !important;
-  font-size: 14px;
-  font-weight: normal;
-}
-
-.tw-comparison-table .no-text-wrap {
+.tw-comparison-table {
+  .no-text-wrap {
     display: block;
     white-space: nowrap !important;
-}
-
-.tw-comparison-table .progress {
-    color: white;
-    line-height: 32px;
-}
-
-.tw-comparison-table .provider-logo {
-  max-width: 6em;
-  max-height: 2em;
-}
-
-@media (max-width: 543px) {
-  .tw-comparison-table .amount-received {
-    background-color: #f2f5f7;
   }
-}
 
-@media (min-width: 544px) and (max-width: 767px) {
-  .tw-comparison-table .amount-received {
+  th {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    font-weight: normal;
+  }
+
+  td {
+    padding-right: 24px !important;
+    padding-left: 24px !important;
+  }
+
+  .highest-amount {
+    font-size: 22px;
+  }
+
+  .amount-received {
     background-color: #f2f5f7;
+
+    @media (min-width: @screen-sm-min) {
+      background-color: #fff;
+    }
+  }
+
+  .provider-logo {
+    max-width: 6em;
+    max-height: 2em;
+
+    @media (min-width: @screen-sm-min) {
+      max-width: 8em;
+    }
   }
 }

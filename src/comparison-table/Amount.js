@@ -4,7 +4,7 @@ export default class Amount extends Component {
   render() {
     const {currency, value, ...props} = this.props;
     return (
-      <span {...props}>{parseFloat(value).toFixed(2)} <span className="small">{currency}</span></span>
+      <strong {...props}>{parseFloat(value).toFixed(this.props.precision || 2)} <strong className="text-primary">{currency}</strong></strong>
     );
   }
 }

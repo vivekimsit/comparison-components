@@ -40,8 +40,8 @@ export default class Demo extends Component {
           source={'GBP'}
           target={'EUR'}
           amount={this.state.amount}
-          providers={['transferwise', 'lloyds']}
         />
+
       </div>
     );
   }
