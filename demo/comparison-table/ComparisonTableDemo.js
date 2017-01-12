@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import DemoAmountInput from './DemoAmountInput';
-import { ComparisonTable } from '../../src';
+import { ComparisonTable, ComparisonBarTable } from '../../src';
 
 export default class Demo extends Component {
   constructor(props) {
@@ -10,12 +10,19 @@ export default class Demo extends Component {
       source: 'GBP',
       target: 'EUR',
       amount: 5000,
+      barAmount: 5000
     };
   }
 
-  onInputChange = (event) => {
+  onTableInputChange = (event) => {
     this.setState({
       amount: parseInt(event.target.value, 10),
+    });
+  }
+
+  onBarTableInputChange = (event) => {
+    this.setState({
+      barAmount: parseInt(event.target.value, 10),
     });
   }
 
@@ -29,7 +36,7 @@ export default class Demo extends Component {
         <DemoAmountInput
           amount={this.state.amount}
           source={this.state.source}
-          onChange={this.onInputChange}
+          onChange={this.onTableInputChange}
         />
 
         <hr />
@@ -40,6 +47,25 @@ export default class Demo extends Component {
           source={'GBP'}
           target={'EUR'}
           amount={this.state.amount}
+        />
+
+        <h2 className="page-header m-t-3">
+          <code>&lt;ComparisonBarTable /&gt;</code>
+        </h2>
+
+        <DemoAmountInput
+          amount={this.state.barAmount}
+          source={this.state.source}
+          onChange={this.onBarTableInputChange}
+        />
+
+        <hr />
+
+        <h3 className="m-b-3">Result</h3>
+        <ComparisonBarTable
+          source={'GBP'}
+          target={'EUR'}
+          amount={this.state.barAmount}
         />
 
       </div>

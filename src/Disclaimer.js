@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import Loader from '../bootstrap/Loader';
+import Loader from './bootstrap/Loader';
 
 import { providersFor } from './ComparisonApi';
-import Amount from './Amount';
 import Datetime from './Datetime';
 
 export default class Disclaimer extends Component {
@@ -62,7 +61,7 @@ export default class Disclaimer extends Component {
                     return <tr>
                       <td>{provider.name}</td>
                       <td>{source} to {target}</td>
-                      <td><Amount currency={source} value={d.amount}/></td>
+                      <td>{d.amount} {source}</td>
                       <td><Datetime date={d.dateCollected} time/></td>
                     </tr>;
                   });
@@ -76,7 +75,7 @@ export default class Disclaimer extends Component {
           <p><code>Hidden cost = (mid-market rate - provider rate) X amount of transfer</code></p>
           <p>The total cost is calculated by adding together the upfront cost and the hidden cost. This represents the entire financial cost to a consumer:</p>
           <p><code>Total cost  = upfront cost + hidden cost</code></p>
-          <p>The data is manually collected in specific thresholds (see table for more detail) and if the amount of transfer is in between these thresholds, we used the provider’s rate applicable for the higher transfer threshold. For example, if a provider’s has a threshold of <Amount currency={this.props.source} value="5000"/>  and <Amount currency={this.props.source} value="10000"/>, and we want to calculate the total cost of sending <Amount currency={this.props.source} value="5500"/> , then we will use the  exchange rate and fee for sending <Amount currency={this.props.source} value="10000"/>. Generally, providers give better exchange rates and charge smaller fees for higher-value transfers, this approach helps to reduce the risk of inflating the cost of using the relevant provider, in fact it may show a better rate for the relevant providers than what they  may actually be.</p>
+          <p>The data is manually collected in specific thresholds (see table for more detail) and if the amount of transfer is in between these thresholds, we used the provider’s rate applicable for the higher transfer threshold. For example, if a provider’s has a threshold of 5000 {this.props.source} and 10000 {this.props.source}, and we want to calculate the total cost of sending 5500 {this.props.source}, then we will use the exchange rate and fee for sending 10000 {this.props.source}. Generally, providers give better exchange rates and charge smaller fees for higher-value transfers, this approach helps to reduce the risk of inflating the cost of using the relevant provider, in fact it may show a better rate for the relevant providers than what they  may actually be.</p>
           <p>In this comparison we have not taken into account the cost to the recipient which a recipient provider may charge for an international transfer.  With TransferWise, the recipient will not be charged for receiving the transfer.</p>
         </div>
       );
