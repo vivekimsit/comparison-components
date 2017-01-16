@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Loader from '../bootstrap/Loader';
 
 import { comparisonsFor } from '../ComparisonApi';
-import Provider from './Provider';
+import TableProvider from './TableProvider';
+import CardProvider from './CardProvider';
 import Disclaimer from '../Disclaimer';
 import './ComparisonTable.less';
 
@@ -100,24 +101,31 @@ export default class ComparisonTable extends Component {
 
     const providers = this.state.showMore ? this.state.providers : this.state.providers.slice(0, 3);
     return (
-      <div className="table-responsive">
-        <table className="table table-bordered">
-          <thead>
-            <tr className="bg-primary text-inverse">
-              <th>Provider</th>
-              <th className="hidden-md hidden-lg hidden-xl text-xs-right text-xs-nowrap">Amount received</th>
-              <th className="hidden-md hidden-lg hidden-xl text-xs-right text-xs-nowrap">Exchange rate</th>
-              <th className="text-xs-right text-xs-nowrap">Service fee</th>
-              <th className="hidden-xs hidden-sm text-xs-right hidden-xs text-xs-nowrap">Exchange rate</th>
-              <th className="hidden-xs hidden-sm text-xs-right text-xs-nowrap">Amount received</th>
-            </tr>
-          </thead>
-          <tbody>
-            {providers.map(p => {
-              return <Provider key={p.id} name={p.name} logo={p.logo} fees={p.fees} rate={p.rate} hiddenFees={p.hiddenFees} maxFee={p.maxFee} source={this.props.source} target={this.props.target} amount={p.amount} highestAmount={providers[0].amount} collectedAt={p.collectedAt}/>
-            })}
-          </tbody>
-        </table>
+      <div>
+        <div className="table-responsive hidden-xs">
+          <table className="table table-bordered">
+            <thead>
+              <tr className="bg-primary text-inverse">
+                <th>Provider</th>
+                <th className="hidden-md hidden-lg hidden-xl text-xs-right">Amount received</th>
+                <th className="hidden-md hidden-lg hidden-xl text-xs-right">Exchange rate</th>
+                <th className="text-xs-right text-xs-nowrap">Service fee</th>
+                <th className="hidden-xs hidden-sm text-xs-right hidden-xs">Exchange rate</th>
+                <th className="hidden-xs hidden-sm text-xs-right">Amount received</th>
+              </tr>
+            </thead>
+            <tbody>
+              {providers.map(p => {
+                return <TableProvider key={p.id} name={p.name} logo={p.logo} fees={p.fees} rate={p.rate} hiddenFees={p.hiddenFees} maxFee={p.maxFee} source={this.props.source} target={this.props.target} amount={p.amount} highestAmount={providers[0].amount} collectedAt={p.collectedAt}/>
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div className="hidden-sm hidden-md hidden-lg hidden-xl m-b-3">
+          {providers.map(p => {
+              return <CardProvider key={p.id} name={p.name} logo={p.logo} fees={p.fees} rate={p.rate} hiddenFees={p.hiddenFees} maxFee={p.maxFee} source={this.props.source} target={this.props.target} amount={p.amount} highestAmount={providers[0].amount} collectedAt={p.collectedAt}/>
+          })}
+        </div>
       </div>
     );
   }

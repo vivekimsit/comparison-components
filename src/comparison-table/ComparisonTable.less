@@ -18,7 +18,11 @@
   }
 
   .highest-amount {
-    font-size: 22px;
+    font-size: 18px;
+
+    @media (min-width: @screen-sm-min) {
+      font-size: 22px;
+    }
   }
 
   .provider-logo {
@@ -27,6 +31,28 @@
 
     @media (min-width: @screen-sm-min) {
       max-width: 8em;
+    }
+  }
+
+  .card {
+    a {
+      text-decoration: none;
+    }
+
+    .item {
+      border-bottom: 1px solid @brand-smoke-plus-20 !important;
+      border-left: 1px solid @brand-smoke-plus-20 !important;
+      border-right: 1px solid @brand-smoke-plus-20 !important;
+    }
+
+    .rounded-bottom-corners {
+      border-bottom-left-radius: 4px !important;
+      border-bottom-right-radius: 4px !important;
+    }
+
+    .card-label {
+      font-size: 14px !important;
+      color: @brand-grey-plus-10 !important;
     }
   }
 }
