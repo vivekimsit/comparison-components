@@ -105,11 +105,11 @@ export default class ComparisonTable extends Component {
           <thead>
             <tr className="bg-primary text-inverse">
               <th>Provider</th>
-              <th className="hidden-md hidden-lg hidden-xl text-xs-right">Amount received</th>
-              <th className="hidden-md hidden-lg hidden-xl text-xs-right">Exchange rate</th>
+              <th className="hidden-md hidden-lg hidden-xl text-xs-right text-xs-nowrap">Amount received</th>
+              <th className="hidden-md hidden-lg hidden-xl text-xs-right text-xs-nowrap">Exchange rate</th>
               <th className="text-xs-right text-xs-nowrap">Service fee</th>
-              <th className="hidden-xs hidden-sm text-xs-right hidden-xs">Exchange rate</th>
-              <th className="hidden-xs hidden-sm text-xs-right">Amount received</th>
+              <th className="hidden-xs hidden-sm text-xs-right hidden-xs text-xs-nowrap">Exchange rate</th>
+              <th className="hidden-xs hidden-sm text-xs-right text-xs-nowrap">Amount received</th>
             </tr>
           </thead>
           <tbody>
